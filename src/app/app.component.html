@@ -1,0 +1,66 @@
+<header>
+<nav   class="navbar navbar-expand-lg navbar-light bg-light">
+  <a  class="navbar-brand" href="#"><img src="assets/imgs/cartaway.jpg" width="100" height = "60"/></a> <div [ngSwitch]= "status"><div *ngSwitchCase=true class="dropdown">
+  <a  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i   style="color:orange" class="material-icons">account_circle</i>
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">My Account</a>
+    <a class="dropdown-item" href="#">My Saved items </a>
+    <a class="dropdown-item" href="#">My Orders </a>
+    <button type="button" (click)= logout() class="dropdown-item btn-primary btn">Log out</button>
+  </div>
+</div> <a *ngSwitchCase=false routerLink ="/signin"><i   style="color:black" class="material-icons">account_circle</i></a></div><a class="nav-link" href="#"><i  style="color:black" class="material-icons">shopping_cart</i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><h5>All Categories</h5><span class="sr-only">(current)</span></a>
+      </li>
+
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Electronics
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Cell Phone & Accessories</a>
+          <a class="dropdown-item" href="#">Video Games</a>
+          <a class="dropdown-item" href="#">Home Audio & Theatre</a>
+        </div>
+      </li>
+
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Clothings and Shoes
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Men</a>
+          <a class="dropdown-item" href="#">Women</a>
+          <a class="dropdown-item" href="#">Girls</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Boys</a>
+        </div>
+      </li>
+    </ul>
+    
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Enter your search key here" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<form class="form-inline">
+  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <div class="input-group-addon"><button class="btn"><i class="material-icons">search</i></button></div>
+    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search for products">
+  </div>
+</form>
+</header>
+<router-outlet></router-outlet>
+<app-all-products></app-all-products>
